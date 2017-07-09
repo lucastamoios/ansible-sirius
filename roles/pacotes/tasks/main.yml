@@ -22,26 +22,9 @@
   become: yes
   with_items:
     - aptitude
-    - blueman
-    - csvtool
-    - dos2unix
-    - etckeeper
     - flake8
-    - fluxgui
-    - gitg
-    - gitinspector
-    - gitk
-    - glances
     - htop
-    - iotop
     - lm-sensors
     - mplayer
-    - mysql-workbench
-    - openvpn
-    - parcellite
-    - qbittorrent
-    - ranger
-    - recordmydesktop
     - vagrant
     - xclip
-    - zram-config

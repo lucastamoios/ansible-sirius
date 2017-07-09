@@ -1,10 +1,5 @@
 - hosts: local
-  remote_user: bodock
-  vars:
-    # Altere para seus dados
-    nome: Marcus Vinicius (Mbodock)
-    email: mbodock@gmail.com
-    signkey: 28EF91D5
+  remote_user: "{{ user }}"
   roles:
       - pacotes
       - tmux

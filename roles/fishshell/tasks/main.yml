@@ -4,10 +4,37 @@
       install_recommends: yes
   become: yes
 
+- name: Instala git
+  apt:
+    name: git
+    state: present
+  become: yes
+
 - name: Cria pasta de configurações
   file:
       path: ~/.config/fish/
       state: directory
+
+- name: Instala o pip
+  apt:
+      name: python-pip
+      state: present
+  become: yes
+
+- name: Instala virtualenv
+  pip:
+      name: virtualenv
+  become: yes
+
+- name: Instala virtualenvwrapper
+  pip:
+      name: virtualenvwrapper
+  become: yes
+
+- name: Obtem FishEnv
+  git:
+    repo: https://github.com/mbodock/FishEnv.git
+    dest: ~/scripts/
 
 - name: Configura fish
   template:

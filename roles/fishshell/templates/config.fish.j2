@@ -1,22 +1,8 @@
-
 # filelocation: ~/.config/fish/
 # Ajustes de path
 set PATH ~/bin/ $PATH
 set PATH ~/scripts/ $PATH
-set PATH ~/Programs/ $PATH
 
-# Incluindo SDK do android
-set PATH ~/work/.android-sdk/platform-tools $PATH
-set PATH ~/work/.android-sdk/tools $PATH
-set PATH ~/work/.android-sdk/build-tools/20.0.0 $PATH
-set ANDROID_HOME /home/marcus/work/.android-sdk/
-set ANDROID_TOOLS /home/marcus/work/.android-sdk/
-set ANDROID_PLATFORM_TOOLS /home/marcus/work/.android-sdk/
-
-set PATH ~/work/.jdk/bin/ $PATH
-set JAVA_HOME /home/marcus/work/.jdk/
-set ANT_HOME /usr/bin/
-set CLASSPATH /home/marcus/work/.jdk/
 
 # Configurando o terminal para 256 cores
 set TERM xterm-256color
@@ -25,30 +11,10 @@ set TERM xterm-256color
 set PYTHONDONTWRITEBYTECODE 1
 # Warnings DBUS
 set NO_AT_BRIDGE 1
-# Desligando vaquinha no ansible
-set ANSIBLE_NOCOWS 1
 
 # Adicionando workon - Deve ser após modificar o path.
-. ~/work/fishenv/fishenv.fish
+. ~/scripts/fishenv.fish
 
-
-# Alias
-alias abre="exo-open"
-alias cv="xclip -se c"
-alias notas="vim ~/.notes"
-alias pyserver="python -m SimpleHTTPServer"
-alias temp="watch -n,5 sensors"
-alias usage="du -sh * | sort -h | tac"
-alias vimdiff="vim (git s | egrep -e '^ M|^\?\?' | egrep -v -e '\/\$' | sed -r 's/\?\?/ M/g' | cut -d' ' -f 3) -p"
-
-function fuck
-    eval sudo $history[1]
-end
-
-function mkcd
-    mkdir $argv
-    cd $argv
-end
 
 # Configurar git no fish
 set fish_git_dirty_color red

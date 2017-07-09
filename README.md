@@ -1,4 +1,4 @@
-# Asuka
+# Ansible para workstation
 
 Conjunto de roles simples para configuração inicial de minha workstation
 
@@ -7,20 +7,19 @@ Conjunto de roles simples para configuração inicial de minha workstation
 
 As roles foram testadas na versão desktop do Xubuntu **16.04.2 LTS (x64)**
 
-Contudo algumas tasks são pessoais de acordo com meu dia-a-dia.
-
 
 ## Uso
 
 Primeiro baixe as roles pelo galaxy:
 
-`ansible-galaxy install -r requirements.yml --roles-path roles`
+    ansible-galaxy install -r requirements.yml --roles-path roles
 
 Em seguida execute o playbook
 
-`ansible-playbook playbook.yml -i inventory.ini -k`
+    ansible-playbook playbook.yml -i inventory.ini -k --extra-vars "user=meu_usuario nome=meu_nome email=meu_email signkey=minha_chave"
 
-> A opção `-k` para definir a senha usauda para torna-se root
+> A opção `-k` para definir a senha usauda para torna-se root, o `--extra-vars`
+> irá definir as variávies específicas de um usuário
 >
 > Lembre-se de conferir se o hosts está correto de acordo com suas necessidades
 
