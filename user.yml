@@ -4,7 +4,6 @@
       - pacotes
       - tmux
       - fishshell
-      - scripts
       - vim
       - git
       - i3

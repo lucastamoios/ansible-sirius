@@ -9,7 +9,6 @@
 - name: Configura repositório
   apt_repository:
     repo: "{{ spotify_repo_line }}"
-    filename: "{{ spotify_repo_file }}"
     state: present
     update_cache: yes
   become: true

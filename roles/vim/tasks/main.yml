@@ -35,6 +35,14 @@
   with_items:
     - "{{ fonts }}"
 
+- name: Obtem fontes com ícones
+  git:
+    repo: https://github.com/ryanoasis/nerd-fonts.git 
+    dest: /tmp
+
+- name: Instala fontes com ícontes
+  shell: /tmp/nerd-fonts/install.sh
+
 - name: Constrói cache de fonts
   shell: fc-cache -vf ~/.fonts/
 
