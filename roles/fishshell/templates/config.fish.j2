@@ -23,6 +23,12 @@ set -x GPG_TTY (tty)
 set fish_git_dirty_color red
 set fish_git_not_dirty_color green
 
+alias em="emacs -nw -f menu-bar-mode"
+alias budget="emacs -nw -f menu-bar-mode ~/Dropbox/Pessoal/.orgfiles/budget.org"
+alias agenda="emacs -nw -f menu-bar-mode ~/Dropbox/Pessoal/.orgfiles/gtd/tasks.org"
+alias agenda="emacs -nw -f menu-bar-mode ~/Dropbox/Pessoal/.orgfiles/gtd/journal.org.gpg"
+alias show_agenda="cat ~/Dropbox/Pessoal/.orgfiles/gtd/tasks.org"
+
 function parse_git_branch
   set -l branch (git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/\1/')
   set -l git_diff (git diff)
