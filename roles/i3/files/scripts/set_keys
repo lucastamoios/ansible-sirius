@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sleep 4
+xmodmap -e 'remove control = Control_R'
+xmodmap -e 'add Mod4 = Control_R'
+

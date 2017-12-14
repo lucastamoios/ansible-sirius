@@ -69,3 +69,12 @@
   become: yes
   with_fileglob:
     - "files/blocks/*"
+
+- name: Copia scripts de inicialização do i3
+  file:
+    src: files/scripts/"{{ item }}"
+    dest: ~/scripts/"{{ item }}"
+    mode: 0755
+  with_items:
+    - set_screen
+    - set_keys
