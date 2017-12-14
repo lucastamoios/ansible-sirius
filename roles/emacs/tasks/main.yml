@@ -1,0 +1,15 @@
+- name: Instala emacs
+  apt:
+    name: emacs
+    state: latest
+  become: yes
+
+- name: Instala evil mode
+  git:
+    repo: git@github.com:emacs-evil/evil.git
+    dest: ~/.emacs.d
+
+- name: Configura emacs
+  template:
+      src: templates/init.el.j2
+      dest: ~/.emacs.d/init.el
