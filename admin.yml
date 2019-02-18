@@ -1,9 +1,0 @@
----
-# Paybook que deve ser executado como root
-- hosts: local
-  remote_user: "{{ user }}"
-  become: true
-  roles:
-    - role: docker
-      docker_install_compose: true
-      docker_compose_version: "1.14.0"

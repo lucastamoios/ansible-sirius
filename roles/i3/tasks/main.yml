@@ -1,14 +1,7 @@
-- name: Adiciona chave para o arc-theme
-  apt_key:
-    url: http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_16.04/Release.key
-    state: present
-  become: yes
-
 - name: Adiciona repo de icons
   apt_repository:
     repo: "{{ item }}"
   with_items:
-    - deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /
     - 'ppa:moka/daily'
   become: yes
 
@@ -28,8 +21,6 @@
     - i3blocks
     - pavucontrol
     - feh
-    # Removido por chave expirada
-    # - arc-theme
     - moka-icon-theme
     - faba-icon-theme
     - faba-mono-icons
@@ -76,5 +67,4 @@
     dest: ~/scripts/"{{ item }}"
     mode: 0755
   with_items:
-    - set_screen
     - set_keys

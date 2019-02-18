@@ -38,7 +38,8 @@
 - name: Obtem fontes com ícones
   git:
     repo: https://github.com/ryanoasis/nerd-fonts.git 
-    dest: /tmp
+    dest: /tmp/nerd-fonts/
+    depth: 1
 
 - name: Instala fontes com ícontes
   shell: /tmp/nerd-fonts/install.sh
